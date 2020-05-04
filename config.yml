@@ -5,19 +5,18 @@ template:
   name: try-learning-lab
 before:
   - type: createIssue
-    title: Welcome!
-    body: new-issue.md
-  - type: createIssue
-    title: Getting Started with GitHub
-    body: 00_welcome.md
-    comments:
-      - new-issue.md
+    title: Getting Started with USGS Data Science Pipelines
+    body: 00-pipelines-overview.md
 steps:
+  - title: Get the big picture
+    description: Learn about our goals and general approaches for data analysis pipelines
+    event: issues.assigned
+    link: '{{ repoUrl }}/issues/1'
   - title: Why use a pipeline?
     description: The makers of the drake R package have a good answer to this question.
     video: 'https://player.vimeo.com/video/362383350'
-    event: issue_comment.created
-    link: '{{ repoUrl }}'
+    event: issues.closed
+    link: '{{ repoUrl }}/issues/2'
     actions:
       - type: closeIssue
   - title: Decomposition into functions
