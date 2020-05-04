@@ -12,7 +12,7 @@ before:
 steps:
   - title: Get the big picture
     description: Learn about our goals and general approaches for data analysis pipelines
-  link: '{{ store.first_issue_url }}'
+    link: '{{ store.first_issue_url }}'
     event: issues.assigned
     actions:
       - type: respond
