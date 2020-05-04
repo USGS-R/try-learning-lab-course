@@ -7,26 +7,22 @@ before:
   - type: createIssue
     title: Welcome!
     body: new-issue.md
-    
   - type: createIssue
     title: Getting Started with GitHub
-    body: "00_welcome.md"
+    body: 00_welcome.md
     comments:
-      - "00_create-tasklist.md"
-
+      - new-issue.md
 steps:
   - title: Why use a pipeline?
     description: The makers of the drake R package have a good answer to this question.
-    video: https://player.vimeo.com/video/362383350
-    event: issues.assigned
+    video: 'https://player.vimeo.com/video/362383350'
+    event: issue_comment.created
     link: '{{ repoUrl }}'
     actions:
       - type: closeIssue
-  
   - title: Decomposition into functions
-    description: "With our tools you always define steps as functions. Try it here."
+    description: With our tools you always define steps as functions. Try it here.
     event: issues.closed
-
   - title: The anatomy of a makefile
-    description: 
-
+    description: Our pipelines use YAML to describe dependencies.
+    event: issues.closed
