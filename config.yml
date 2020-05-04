@@ -8,9 +8,15 @@ before:
     title: Welcome!
     body: new-issue.md
 steps:
-  - title: First step
-    description: The first step in your course
+  - title: Why use a pipeline?
+    description: The makers of the drake R package have a good answer to this question. Watch the video to learn more. 
+    video: https://player.vimeo.com/video/362383350
     event: issues.assigned
     link: '{{ repoUrl }}'
     actions:
       - type: closeIssue
+  
+  - title: Decomposition into functions
+    description: Complex projects are more understandable - and pipelines more feasible - when your steps are defined as functions. To use our current tools (remake, scipiper, or drake), all input data should be declared as function arguments, and for remake and scipiper, each function should have a single output (file or R object).
+    event: issues.closed
+
