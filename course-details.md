@@ -1,4 +1,4 @@
-This is the description we show on the course page [here](https://lab.github.com/USGS-R/try-learning-lab). This first paragraph will be featured at the top of the page so make it great.
+Welcome to USGS Data Science! This course is about our tools and conventions for data pipelines. The course landing page is [here](https://lab.github.com/USGS-R/try-learning-lab).
 ​
 
 ​
