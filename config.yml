@@ -5,23 +5,32 @@ template:
   name: try-learning-lab
 before:
   - type: createIssue
-    title: Getting Started with USGS Data Science Pipelines
-    body: 00-pipelines-overview.md
+    title: Get started with USGS Data Science pipelines
+    body: 00-overview.md
+    store:
+      first_issue_url: '{{ result.data.html_url }}'
 steps:
   - title: Get the big picture
     description: Learn about our goals and general approaches for data analysis pipelines
+  link: '{{ store.first_issue_url }}'
     event: issues.assigned
-    link: '{{ repoUrl }}/issues/1'
-  - title: Why use a pipeline?
-    description: The makers of the drake R package have a good answer to this question.
-    video: 'https://player.vimeo.com/video/362383350'
-    event: issues.closed
-    link: '{{ repoUrl }}/issues/2'
     actions:
-      - type: closeIssue
-  - title: Decomposition into functions
-    description: With our tools you always define steps as functions. Try it here.
+      - type: respond
+        with: 00-configure.md
+        store:
+          configure_comment_url: '{{ result.data.html_url }}'
+  - title: Configure your R environment
+    description: Install packages and establish an RStudio project for the exercises in course
+    link: '{{ store.configure_comment_url }}'
     event: issues.closed
-  - title: The anatomy of a makefile YAML
-    description: Our pipelines use YAML to describe dependencies.
+    actions:
+      - type: createIssue
+        title: Structure your code predictably
+        body: 01-structure.md
+  - title: Organize your projects
+    description: Learn to organize into functions, targets, and phases
     event: issues.closed
+    actions:
+      - type: createIssue
+        title: Where to learn more
+        body: 90-references.md
