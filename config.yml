@@ -23,6 +23,6 @@ steps:
   - title: Decomposition into functions
     description: With our tools you always define steps as functions. Try it here.
     event: issues.closed
-  - title: The anatomy of a makefile
+  - title: The anatomy of a makefile YAML
     description: Our pipelines use YAML to describe dependencies.
     event: issues.closed
