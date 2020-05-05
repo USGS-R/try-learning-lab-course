@@ -37,8 +37,9 @@ steps:
     link: '{{ store.structure_issue_url }}'
     actions:
       - type: respond
-        title: pipeline phases and corresponding directory structure
-        body: 20-phases-overview.md
+        with: 20-phases-overview.md
+        store:
+          phases_comment_url: '{{ result.data.html_url }}'
   - title: Open a pull request for directory structure
     description: Open a pull request.
     event: pull_request.opened
@@ -50,6 +51,10 @@ steps:
         required: false
       - type: createPullRequestComment
         body: 21-phases-activity.md
+        file: Readme.md
+        position: 1
+        data:
+          welcomeLink: "%actions.prev.data.html_url%"
 
 # 90 appendix
   - title: Organize your projects
