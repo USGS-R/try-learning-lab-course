@@ -51,8 +51,6 @@ steps:
         required: false
       - type: createReview
         body: 21-phases-activity.md
-        file: Readme.md
-        position: 1
         data:
           welcomeLink: '%actions.prev.data.html_url%'
   - title: Organize your projects
