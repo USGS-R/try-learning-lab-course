@@ -35,10 +35,6 @@ steps:
       - type: createIssue
         title: pipeline phases and corresponding directory structure
         body: 20-phases-overview.md
-  - title: Directory phases activity
-    description: Use github to set up your source directory for phases
-    event: issues.assigned
-    actions:
       - type: respond
         with: 21-phases-activity.md
 
