@@ -27,16 +27,29 @@ steps:
       - type: createIssue
         title: Structure your code predictably
         body: 01-structure.md
+        store:
+          structure_issue_url: '{{ result.data.html_url }}'
+
 # 20 Directory structure and phases
   - title: Directory structure and phases
     description: Team conventions for how our pipelines are organized
-    event: issues.closed
+    event: issues.assigned
+    link: '{{ store.structure_issue_url }}'
     actions:
-      - type: createIssue
+      - type: respond
         title: pipeline phases and corresponding directory structure
         body: 20-phases-overview.md
-      - type: respond
-        with: 21-phases-activity.md
+  - title: Open a pull request for directory structure
+    description: Open a pull request.
+    event: pull_request.opened
+    link: '{{ store.structure_issue_url }}'
+    actions:
+      - type: closeIssue
+        issue: Welcome
+        action_id: prev
+        required: false
+      - type: createPullRequestComment
+        body: 21-phases-activity.md
 
 # 90 appendix
   - title: Organize your projects
