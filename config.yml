@@ -43,13 +43,13 @@ steps:
   - title: Open a pull request for directory structure
     description: Open a pull request.
     event: pull_request.opened
-    link: '{{ store.structure_issue_url }}'
+    link: '{{ store.phases_comment_url }}'
     actions:
       - type: closeIssue
         issue: Welcome
         action_id: prev
         required: false
-      - type: createPullRequestComment
+      - type: createReview
         body: 21-phases-activity.md
         file: Readme.md
         position: 1
