@@ -1,8 +1,8 @@
-title: try-learning-lab
-description: try learning lab
+title: Intro to Data Analysis Pipelines
+description: Intro to Data Analysis Pipelines for USGS Data Science
 template:
-  repo: try-learning-lab-template
-  name: try-learning-lab
+  repo: ds-pipelines-1-template
+  name: ds-pipelines-1
 before:
   - type: createIssue
     title: Get started with USGS Data Science pipelines
@@ -20,7 +20,9 @@ steps:
         store:
           configure_comment_url: '{{ result.data.html_url }}'
   - title: Configure your R environment
-    description: Install packages and establish an RStudio project for the exercises in course
+    description: >-
+      Install packages and establish an RStudio project for the exercises in
+      course
     link: '{{ store.configure_comment_url }}'
     event: issues.closed
     actions:
@@ -29,8 +31,6 @@ steps:
         body: 01-structure.md
         store:
           structure_issue_url: '{{ result.data.html_url }}'
-
-# 20 Directory structure and phases
   - title: Directory structure and phases
     description: Team conventions for how our pipelines are organized
     event: issues.assigned
@@ -54,11 +54,9 @@ steps:
         file: Readme.md
         position: 1
         data:
-          welcomeLink: "%actions.prev.data.html_url%"
-
-# 90 appendix
+          welcomeLink: '%actions.prev.data.html_url%'
   - title: Organize your projects
-    description: Learn to organize into functions, targets, and phases
+    description: 'Learn to organize into functions, targets, and phases'
     event: issues.closed
     actions:
       - type: createIssue
