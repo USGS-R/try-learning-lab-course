@@ -36,28 +36,6 @@ steps:
     event: issues.assigned
     link: '{{ store.structure_issue_url }}'
     actions:
-      - type: respond
-        with: 20-phases-overview.md
-        store:
-          phases_comment_url: '{{ result.data.html_url }}'
-  - title: Open a pull request for directory structure
-    description: Open a pull request.
-    event: pull_request.opened
-    link: '{{ store.phases_comment_url }}'
-    actions:
-      - type: closeIssue
-        issue: Welcome
-        action_id: prev
-        required: false
-      - type: createReview
-        body: 21-phases-activity.md
-        event: REQUEST_CHANGES
-        data:
-          welcomeLink: '%actions.prev.data.html_url%'
-  - title: Organize your projects
-    description: 'Learn to organize into functions, targets, and phases'
-    event: issues.closed
-    actions:
       - type: createIssue
         title: Where to learn more
         body: 90-references.md
