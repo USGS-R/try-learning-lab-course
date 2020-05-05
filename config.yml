@@ -40,7 +40,6 @@ steps:
     event: issues.assigned
     actions:
       - type: respond
-        title: pipeline phases and corresponding directory structure
         with: 21-phases-activity.md
 
 # 90 appendix
