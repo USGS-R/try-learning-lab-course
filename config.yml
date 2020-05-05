@@ -41,7 +41,7 @@ steps:
     actions:
       - type: respond
         title: pipeline phases and corresponding directory structure
-        body: 21-phases-activity.md
+        with: 21-phases-activity.md
 
 # 90 appendix
   - title: Organize your projects
