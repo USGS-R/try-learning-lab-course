@@ -51,6 +51,7 @@ steps:
         required: false
       - type: createReview
         body: 21-phases-activity.md
+        event: REQUEST_CHANGES
         data:
           welcomeLink: '%actions.prev.data.html_url%'
   - title: Organize your projects
